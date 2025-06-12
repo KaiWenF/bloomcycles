@@ -1,0 +1,87 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #fefefe;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+header, section, footer {
+    padding: 20px;
+    text-align: center;
+}
+header {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+}
+section {
+    margin-top: 20px;
+}
+form input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px auto;
+}
+form button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #ff1493;
+}
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+img.responsive-img {
+    max-width: 90%;
+    height: auto;
+    margin: 20px 0;
+}
+.mockup-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.mockup-gallery img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+.slide-up {
+    animation: slideUp 1s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #1e1e1e;
+    color: #f0f0f0;
+}
+body.dark-mode header {
+    background: #333;
+}
+body.dark-mode form button {
+    background-color: #bb86fc;
+}
+body.dark-mode form button:hover {
+    background-color: #9c27b0;
+}
