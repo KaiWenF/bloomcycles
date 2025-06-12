@@ -23,13 +23,30 @@
             <div class="logo">Bloom Cycles</div>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#screenshots">Screenshots</a>
+                <a href="#comparison">Compare</a>
+                <a href="#screenshots">Gallery</a>
                 <a href="#signup">Join Beta</a>
+                <a href="#survey">Survey</a>
             </div>
-            <button onclick="toggleDarkMode()" class="theme-toggle">
-                <span class="theme-icon">🌙</span>
-            </button>
+            <div class="nav-controls">
+                <button onclick="toggleDarkMode()" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
         </nav>
+        
+        <div class="mobile-menu">
+            <div class="mobile-menu-links">
+                <a href="#features">All Features</a>
+                <a href="#comparison">Why Choose Us</a>
+                <a href="#screenshots">App Gallery</a>
+                <a href="#signup">Join Beta Program</a>
+                <a href="#survey">Take the Survey</a>
+            </div>
+        </div>
         
         <section class="hero">
             <div class="hero-content">
@@ -45,68 +62,228 @@
     </header>
 
     <section id="features" class="features-section">
-        <h2>Why Choose Bloom Cycles?</h2>
-        <p class="section-intro">The world's most comprehensive reproductive health tracking app, combining cutting-edge technology with medical expertise.</p>
+        <h2>Comprehensive Features</h2>
+        <p class="section-intro">Bloom Cycles offers the most complete suite of reproductive health tracking tools available, powered by advanced AI and designed with your privacy in mind.</p>
         
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>Advanced AI & Machine Learning</h3>
-                <p>Experience state-of-the-art predictive analytics and pattern recognition. Our AI continuously learns from your data to provide increasingly accurate insights and personalized recommendations.</p>
+        <div class="features-container">
+            <!-- Core Features Section -->
+            <div class="feature-category">
+                <h3 class="category-title">Core Tracking Features</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🩸</div>
+                        <h4>Advanced Cycle Tracking</h4>
+                        <ul class="feature-list">
+                            <li>AI-powered cycle predictions with 99% accuracy</li>
+                            <li>Detailed menstrual flow and symptoms logging</li>
+                            <li>Comprehensive cycle statistics and insights</li>
+                            <li>Customizable tracking factors and symptoms</li>
+                            <li>Historical cycle data visualization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🌡️</div>
+                        <h4>Fertility Monitoring</h4>
+                        <ul class="feature-list">
+                            <li>Basal body temperature (BBT) tracking</li>
+                            <li>Cervical fluid monitoring with visual guides</li>
+                            <li>Ovulation test integration and tracking</li>
+                            <li>ML-powered BBT pattern recognition</li>
+                            <li>Fertility window predictions with confidence rating</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🤰</div>
+                        <h4>Pregnancy Journey</h4>
+                        <ul class="feature-list">
+                            <li>Comprehensive week-by-week tracking</li>
+                            <li>Detailed fetal development information</li>
+                            <li>Pregnancy symptom and measurement logging</li>
+                            <li>Appointment and test result management</li>
+                            <li>Contraction timer and birth plan tools</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔥</div>
+                        <h4>Menopause Support</h4>
+                        <ul class="feature-list">
+                            <li>Perimenopause and menopause symptom tracking</li>
+                            <li>Hot flash frequency and intensity monitoring</li>
+                            <li>Hormone therapy tracking and effectiveness</li>
+                            <li>Lifestyle impact assessment tools</li>
+                            <li>Personalized coping strategies</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Comprehensive Health Tracking</h3>
-                <p>From first period through menopause, track your entire reproductive journey. Monitor symptoms, medications, mood, energy levels, and more with our intuitive interface.</p>
+            <!-- Advanced Technology Section -->
+            <div class="feature-category">
+                <h3 class="category-title">Advanced Technology</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h4>AI & Machine Learning</h4>
+                        <ul class="feature-list">
+                            <li>State-of-the-art ML algorithms for predictions</li>
+                            <li>Pattern recognition across 50+ tracked factors</li>
+                            <li>Continuous learning from your unique data</li>
+                            <li>Anomaly detection with medical insights</li>
+                            <li>Trend analysis with visual reporting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h4>Pattern Analysis</h4>
+                        <ul class="feature-list">
+                            <li>Multi-factorial pattern detection</li>
+                            <li>Cycle comparison analytics</li>
+                            <li>Correlation identification between symptoms</li>
+                            <li>Interactive pattern timeline visualization</li>
+                            <li>Statistical insights with confidence ratings</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h4>Health Integration</h4>
+                        <ul class="feature-list">
+                            <li>Complete Apple HealthKit integration</li>
+                            <li>Medical device data synchronization</li>
+                            <li>Import from other tracking apps</li>
+                            <li>Export capabilities for healthcare providers</li>
+                            <li>Background data syncing and updates</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h4>Customizable Tracking</h4>
+                        <ul class="feature-list">
+                            <li>50+ trackable symptoms and factors</li>
+                            <li>Custom symptom creation</li>
+                            <li>Personalized tracking routines</li>
+                            <li>Adaptable tracking based on life stage</li>
+                            <li>Medication and supplement tracking</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Medical-Grade Security</h3>
-                <p>Your privacy is our priority. Benefit from end-to-end encryption, HIPAA compliance, and granular privacy controls. Your sensitive health data stays secure and private.</p>
+            <!-- Privacy & Security Section -->
+            <div class="feature-category">
+                <h3 class="category-title">Privacy & Accessibility</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <h4>Medical-Grade Security</h4>
+                        <ul class="feature-list">
+                            <li>End-to-end encryption for all sensitive data</li>
+                            <li>HIPAA compliance standards</li>
+                            <li>Encrypted PDF exports for medical sharing</li>
+                            <li>Secure authentication options</li>
+                            <li>Private on-device data processing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h4>Global Language Support</h4>
+                        <ul class="feature-list">
+                            <li>29 languages including right-to-left scripts</li>
+                            <li>Real-time language switching without restart</li>
+                            <li>Culturally appropriate health terminology</li>
+                            <li>Localized date and number formatting</li>
+                            <li>Region-specific health information</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">♿</div>
+                        <h4>Accessibility Features</h4>
+                        <ul class="feature-list">
+                            <li>Complete VoiceOver support</li>
+                            <li>Dynamic type compatibility</li>
+                            <li>Voice control capabilities</li>
+                            <li>High contrast mode</li>
+                            <li>Haptic feedback support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📲</div>
+                        <h4>User Experience</h4>
+                        <ul class="feature-list">
+                            <li>Intuitive, customizable dashboard</li>
+                            <li>Beautiful Dark Mode support</li>
+                            <li>Quick-access widgets</li>
+                            <li>Smart notifications system</li>
+                            <li>Offline functionality for all core features</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3>Global Accessibility</h3>
-                <p>Available in 29 languages with cultural sensitivity. Enjoy offline functionality, universal design, and seamless cross-platform experience.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>Complete Health Integration</h3>
-                <p>Seamlessly connect with Apple HealthKit, sync with medical devices, and share data with healthcare providers. Your health ecosystem, unified.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>Educational Resources</h3>
-                <p>Access a comprehensive health library, personalized tips, and expert content. Stay informed with the latest research and medical insights.</p>
-            </div>
-        </div>
-
-        <div class="feature-highlights">
-            <div class="highlight">
-                <h3>Advanced Features</h3>
-                <ul>
-                    <li>Deep cycle analysis and pattern recognition</li>
-                    <li>Comprehensive fertility tracking</li>
-                    <li>Detailed symptom correlation</li>
-                    <li>Professional report generation</li>
-                    <li>Interactive data visualization</li>
-                </ul>
-            </div>
-            
-            <div class="highlight">
-                <h3>User Experience</h3>
-                <ul>
-                    <li>Intuitive, customizable interface</li>
-                    <li>Dark mode and dynamic type support</li>
-                    <li>Voice control capabilities</li>
-                    <li>Smart notification system</li>
-                    <li>Personalized dashboard</li>
-                </ul>
+            <!-- Medical & Education Section -->
+            <div class="feature-category">
+                <h3 class="category-title">Medical & Educational Tools</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏥</div>
+                        <h4>Healthcare Provider Tools</h4>
+                        <ul class="feature-list">
+                            <li>Secure, encrypted PDF health reports</li>
+                            <li>Detailed cycle and symptom summaries</li>
+                            <li>Medical appointment management</li>
+                            <li>Healthcare provider directory</li>
+                            <li>Medication tracking with effectiveness rating</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h4>Educational Resources</h4>
+                        <ul class="feature-list">
+                            <li>Comprehensive reproductive health library</li>
+                            <li>Personalized educational content</li>
+                            <li>Scientific explanations of detected patterns</li>
+                            <li>Evidence-based health recommendations</li>
+                            <li>Visual learning tools and animations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h4>Health Summary Tools</h4>
+                        <ul class="feature-list">
+                            <li>AI-generated health summaries</li>
+                            <li>Speech synthesis for audio reports</li>
+                            <li>Customizable summary templates</li>
+                            <li>Historical health data comparison</li>
+                            <li>Shareable health insights</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔔</div>
+                        <h4>Smart Notification System</h4>
+                        <ul class="feature-list">
+                            <li>Customizable notification types and timing</li>
+                            <li>Priority-based notification management</li>
+                            <li>Reminder grouping preferences</li>
+                            <li>Background task scheduling</li>
+                            <li>Calendar integration for appointments</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
