@@ -186,6 +186,34 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(title);
     });
     
+    // Animate Watch App section
+    const watchAppSection = document.querySelector('.watch-app-section');
+    const watchFeatures = document.querySelectorAll('.watch-feature');
+    
+    if (watchAppSection) {
+        const watchObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                watchAppSection.classList.add('watch-section-visible');
+                
+                // Animate features with delay
+                watchFeatures.forEach((feature, index) => {
+                    setTimeout(() => {
+                        feature.classList.add('watch-feature-visible');
+                    }, index * 200);
+                });
+                
+                watchObserver.unobserve(watchAppSection);
+            }
+        }, { threshold: 0.2 });
+        
+        watchAppSection.classList.add('watch-section-animate');
+        watchFeatures.forEach(feature => {
+            feature.classList.add('watch-feature-animate');
+        });
+        
+        watchObserver.observe(watchAppSection);
+    }
+    
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

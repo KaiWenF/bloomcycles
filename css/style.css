@@ -1014,3 +1014,214 @@ body.dark-mode .category-nav-item {
 .feature-card:nth-child(2) { transition-delay: 0.2s; }
 .feature-card:nth-child(3) { transition-delay: 0.3s; }
 .feature-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* Apple Watch App Section */
+.watch-app-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+    overflow: hidden;
+}
+
+.watch-app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.watch-app-content {
+    flex: 1;
+}
+
+.watch-app-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.watch-app-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.watch-app-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.watch-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.watch-feature-icon {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+.watch-feature p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.watch-app-cta {
+    margin-top: 2rem;
+}
+
+.coming-soon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.launch-note {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+}
+
+.watch-app-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.watch-app-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(-10deg) rotate(-5deg);
+    transition: all 0.5s ease;
+    animation: float-watch 6s ease-in-out infinite;
+}
+
+.watch-app-image:hover img {
+    transform: perspective(1000px) rotateY(0deg) rotate(0deg);
+    animation-play-state: paused;
+}
+
+/* Dark mode for Watch App section */
+body.dark-mode .watch-app-section {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05) 0%, rgba(156, 39, 176, 0.05) 100%);
+}
+
+body.dark-mode .watch-app-tagline,
+body.dark-mode .watch-feature p,
+body.dark-mode .launch-note {
+    color: #ccc;
+}
+
+/* Responsive styles for Watch App section */
+@media (max-width: 992px) {
+    .watch-app-container {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+    
+    .watch-app-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .watch-app-tagline {
+        font-size: 1.3rem;
+    }
+    
+    .watch-app-image img {
+        transform: perspective(1000px) rotateY(0deg);
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .watch-app-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .watch-app-content h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .watch-app-tagline {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .watch-feature p {
+        font-size: 1rem;
+    }
+    
+    .coming-soon,
+    .launch-note {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .watch-app-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .watch-app-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .watch-app-image img {
+        max-width: 100%;
+    }
+}
+
+/* Apple Watch App Section Animations */
+.watch-section-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.watch-section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.watch-feature-animate {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.watch-feature-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Watch app floating animation */
+@keyframes float-watch {
+    0% { transform: translateY(0px) rotate(-5deg); }
+    50% { transform: translateY(-15px) rotate(-2deg); }
+    100% { transform: translateY(0px) rotate(-5deg); }
+}
+
+.watch-app-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(-10deg) rotate(-5deg);
+    transition: all 0.5s ease;
+    animation: float-watch 6s ease-in-out infinite;
+}
+
+.watch-app-image:hover img {
+    transform: perspective(1000px) rotateY(0deg) rotate(0deg);
+    animation-play-state: paused;
+}
