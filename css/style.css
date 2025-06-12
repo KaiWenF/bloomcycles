@@ -770,12 +770,71 @@ body.dark-mode .feature-no {
     margin-bottom: 1rem;
 }
 
+.gdpr-container {
+    max-width: 90%;
+    margin: 0 auto 1.5rem;
+    text-align: left;
+}
+
 .checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: block;
     font-size: 0.9rem;
     color: white;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #f0f0f0;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.consent-text {
+    display: inline;
 }
 
 .form-error {
@@ -1355,5 +1414,16 @@ body.dark-mode .launch-note {
 @media (max-width: 480px) {
     .real-watch-image {
         max-width: 220px;
+    }
+}
+
+/* Responsive adjustments for the consent text */
+@media (max-width: 480px) {
+    .gdpr-container {
+        max-width: 320px;
+    }
+    
+    .checkbox-container {
+        font-size: 0.8rem;
     }
 }
