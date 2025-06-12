@@ -1,58 +1,233 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloom Cycles</title>
+    <title>Bloom Cycles - Your Complete Reproductive Health Companion</title>
+    <meta name="description" content="Comprehensive reproductive health tracking app for menstrual cycles, pregnancy, menopause, and fertility with AI-powered insights.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header class="fade-in">
-        <h1>Bloom Cycles</h1>
-        <p>Your personalized companion for menstrual, fertility, pregnancy, and menopause tracking.</p>
-        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <header class="hero-section">
+        <nav class="main-nav">
+            <div class="logo">Bloom Cycles</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#screenshots">Screenshots</a>
+                <a href="#signup">Join Beta</a>
+            </div>
+            <button onclick="toggleDarkMode()" class="theme-toggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Your Complete Reproductive Health Journey</h1>
+            <p class="hero-subtitle">Track, understand, and optimize your reproductive health with AI-powered insights</p>
+            <div class="cta-buttons">
+                <a href="#signup" class="cta-primary">Join Beta</a>
+                <a href="#features" class="cta-secondary">Learn More</a>
+            </div>
+        </div>
     </header>
 
-    <section id="features" class="slide-up">
-        <h2>App Features</h2>
-        <ul>
-            <li>🩸 Period & Symptom Tracking</li>
-            <li>🤰 Pregnancy Support & Baby Logs</li>
-            <li>🔥 Menopause Mode for hot flashes, sleep, and more</li>
-            <li>📆 Fertility Calendar with AI insights</li>
-            <li>📱 iPhone, iPad, and future Apple Watch support</li>
-            <li>🌐 14+ Languages supported</li>
-        </ul>
-        <img src="images/mockup1.jpg" alt="App Preview" class="responsive-img">
-    </section>
-
-    <section id="mockups" class="fade-in">
-        <h2>In-App Experience</h2>
-        <div class="mockup-gallery">
-            <img src="images/mockup2.jpg" alt="Dashboard Screen">
-            <img src="images/mockup3.jpg" alt="Calendar View">
-            <img src="images/mockup4.jpg" alt="Daily Check-In">
+    <section id="features" class="features-section">
+        <h2>Comprehensive Health Tracking</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🩸</div>
+                <h3>Menstrual Tracking</h3>
+                <p>Advanced period tracking with AI-powered predictions and pattern analysis</p>
+                <ul>
+                    <li>Cycle prediction</li>
+                    <li>Symptom tracking</li>
+                    <li>BBT monitoring</li>
+                    <li>Pattern analysis</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🤰</div>
+                <h3>Pregnancy Support</h3>
+                <p>Comprehensive pregnancy tracking and postpartum care</p>
+                <ul>
+                    <li>Weekly updates</li>
+                    <li>Symptom logging</li>
+                    <li>Baby development</li>
+                    <li>Postpartum care</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Menopause Mode</h3>
+                <p>Dedicated support for menopause transition</p>
+                <ul>
+                    <li>Hot flash tracking</li>
+                    <li>Sleep monitoring</li>
+                    <li>Mood tracking</li>
+                    <li>Personalized insights</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Fertility Insights</h3>
+                <p>AI-powered fertility tracking and predictions</p>
+                <ul>
+                    <li>Ovulation tracking</li>
+                    <li>Fertility calendar</li>
+                    <li>Pattern analysis</li>
+                    <li>Personalized recommendations</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="signup" class="slide-up">
+    <section id="screenshots" class="screenshots-section">
+        <h2>Experience Bloom Cycles</h2>
+        
+        <!-- Onboarding Flow -->
+        <div class="screenshot-group">
+            <h3>Getting Started</h3>
+            <div class="screenshot-showcase">
+                <div class="screenshot-container">
+                    <img src="images/screenshots/First Onboarding screen.png" alt="Welcome to Bloom Cycles" loading="lazy">
+                    <div class="screenshot-caption">Welcome to Bloom Cycles</div>
+                </div>
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Period OnBoading Image.png" alt="Period Tracking" loading="lazy">
+                    <div class="screenshot-caption">Period Tracking</div>
+                </div>
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Cycle Pattern Onboarding handheld.png" alt="Cycle Patterns" loading="lazy">
+                    <div class="screenshot-caption">Cycle Patterns</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Features -->
+        <div class="screenshot-group">
+            <h3>Core Features</h3>
+            <div class="screenshot-showcase">
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Darkmode Dashboard Screen.png" alt="Dashboard" loading="lazy">
+                    <div class="screenshot-caption">Smart Dashboard</div>
+                </div>
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Calendar Screen WIth Perdiction Information.png" alt="Calendar with Predictions" loading="lazy">
+                    <div class="screenshot-caption">AI-Powered Calendar</div>
+                </div>
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Dark Mode Daily Check-In Screen.png" alt="Daily Check-In" loading="lazy">
+                    <div class="screenshot-caption">Daily Check-In</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specialized Features -->
+        <div class="screenshot-group">
+            <h3>Specialized Tracking</h3>
+            <div class="screenshot-showcase">
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Menopause_With_Woman Summary Screen 1.png" alt="Menopause Tracking" loading="lazy">
+                    <div class="screenshot-caption">Menopause Support</div>
+                </div>
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Dark Mode Fertility Screen.png" alt="Fertility Tracking" loading="lazy">
+                    <div class="screenshot-caption">Fertility Insights</div>
+                </div>
+                <div class="screenshot-container">
+                    <img src="images/screenshots/PregnancyAndBabyLogs HandHeld Onboarding.png" alt="Pregnancy Tracking" loading="lazy">
+                    <div class="screenshot-caption">Pregnancy Journey</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personalization -->
+        <div class="screenshot-group">
+            <h3>Personalization</h3>
+            <div class="screenshot-showcase">
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Complete Profile Image.png" alt="Profile Customization" loading="lazy">
+                    <div class="screenshot-caption">Profile Customization</div>
+                </div>
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Language iPhone settings Screen.png" alt="Language Settings" loading="lazy">
+                    <div class="screenshot-caption">Multi-language Support</div>
+                </div>
+                <div class="screenshot-container">
+                    <img src="images/screenshots/Dark Mode Fertility Screen Black Woman.png" alt="Inclusive Design" loading="lazy">
+                    <div class="screenshot-caption">Inclusive Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signup" class="signup-section">
         <h2>Join the Beta Test</h2>
-        <p>Want early access? Sign up below:</p>
-        <form action="https://formspree.io/f/mnqeqkzj" method="POST">
-            <input type="email" name="email" placeholder="Your email" required>
-            <button type="submit">Sign Up</button>
+        <p>Be among the first to experience the future of reproductive health tracking</p>
+        <form action="https://formspree.io/f/mnqeqkzj" method="POST" class="signup-form" id="betaSignupForm">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your email" required>
+                <div class="form-error" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label class="checkbox-container">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    I agree to receive updates about Bloom Cycles (GDPR compliant)
+                </label>
+            </div>
+            <button type="submit" id="submitButton">
+                <span class="button-text">Join Beta</span>
+                <span class="loading-spinner"></span>
+            </button>
+            <div class="form-message" id="formMessage"></div>
         </form>
     </section>
 
-    <section id="survey" class="fade-in">
-        <h2>Survey</h2>
-        <p>Help us improve Bloom Cycles. <a href="https://www.surveymonkey.com/r/placeholder" target="_blank">Take the Survey</a></p>
+    <section id="survey" class="survey-section">
+        <h2>Help Shape Bloom Cycles</h2>
+        <p>Your feedback is crucial in making Bloom Cycles the best reproductive health app</p>
+        <div class="survey-container">
+            <div class="survey-card">
+                <h3>User Research Survey</h3>
+                <p>Share your thoughts and help us understand your needs better</p>
+                <a href="https://www.surveymonkey.com/r/BloomCyclesUserResearch" class="survey-button" target="_blank" rel="noopener noreferrer">
+                    Take the Survey
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Bloom Cycles by Kai Wen. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bloom Cycles</h3>
+                <p>Your personalized companion for reproductive health</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#features">Features</a>
+                <a href="#screenshots">Screenshots</a>
+                <a href="#signup">Join Beta</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bloom Cycles by Kai Wen. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
