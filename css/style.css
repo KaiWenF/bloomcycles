@@ -1108,20 +1108,17 @@ body.dark-mode .category-nav-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 5;
 }
 
 .real-watch-image {
-    max-width: 340px; /* Control maximum width */
+    max-width: 280px;
     width: auto;
     height: auto;
-    opacity: 0;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
-}
-
-.real-watch-image.loaded {
     opacity: 1;
+    transform: rotate(6deg);
 }
 
 .watch-mockup {
@@ -1203,9 +1200,14 @@ body.dark-mode .category-nav-item {
     opacity: 0.8;
 }
 
-/* JavaScript to load the real image if available */
-.watch-mockup.hidden {
+/* Hide mockup by default */
+.watch-mockup {
     display: none;
+}
+
+/* Only show mockup if image fails to load */
+.watch-mockup.fallback-visible {
+    display: block;
 }
 
 @media (max-width: 768px) {
