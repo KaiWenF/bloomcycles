@@ -324,6 +324,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Handle Watch App image loading
+    const watchImage = document.querySelector('.real-watch-image');
+    const watchMockup = document.querySelector('.watch-mockup');
+    
+    if (watchImage && watchMockup) {
+        // Check if image exists and loads properly
+        watchImage.onload = function() {
+            watchImage.classList.add('loaded');
+            watchMockup.classList.add('hidden');
+        };
+        
+        // If image fails to load, keep showing the mockup
+        watchImage.onerror = function() {
+            console.log('Watch app image failed to load, showing mockup instead');
+            watchImage.style.display = 'none';
+            watchMockup.style.display = 'block';
+        };
+    }
+    
     // Create mobile category navigation for features section
     createMobileCategoryNav();
 });

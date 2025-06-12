@@ -1093,91 +1093,118 @@ body.dark-mode .category-nav-item {
     justify-content: center;
     align-items: center;
     position: relative;
+    min-height: 400px;
 }
 
-.watch-app-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    transform: perspective(1000px) rotateY(-10deg) rotate(-5deg);
-    transition: all 0.5s ease;
+.real-watch-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.real-watch-image.loaded {
+    opacity: 1;
+}
+
+.watch-mockup {
+    position: relative;
+    width: 240px;
+    height: 360px;
+    margin: 0 auto;
     animation: float-watch 6s ease-in-out infinite;
 }
 
-.watch-app-image:hover img {
-    transform: perspective(1000px) rotateY(0deg) rotate(0deg);
-    animation-play-state: paused;
+.watch-frame {
+    position: relative;
+    width: 180px;
+    height: 220px;
+    background: #333;
+    border-radius: 40px;
+    margin: 0 auto;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        0 0 0 15px #444,
+        0 0 0 16px #222;
+    overflow: hidden;
 }
 
-/* Dark mode for Watch App section */
-body.dark-mode .watch-app-section {
-    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05) 0%, rgba(156, 39, 176, 0.05) 100%);
+.watch-screen {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background: #000;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-body.dark-mode .watch-app-tagline,
-body.dark-mode .watch-feature p,
-body.dark-mode .launch-note {
-    color: #ccc;
+.watch-crown {
+    position: absolute;
+    top: 80px;
+    right: -8px;
+    width: 16px;
+    height: 30px;
+    background: #555;
+    border-radius: 8px;
 }
 
-/* Responsive styles for Watch App section */
-@media (max-width: 992px) {
-    .watch-app-container {
-        flex-direction: column-reverse;
-        gap: 3rem;
-    }
-    
-    .watch-app-content h2 {
-        font-size: 2.2rem;
-    }
-    
-    .watch-app-tagline {
-        font-size: 1.3rem;
-    }
-    
-    .watch-app-image img {
-        transform: perspective(1000px) rotateY(0deg);
-        max-width: 80%;
-    }
+.watch-band {
+    width: 120px;
+    height: 70px;
+    background: var(--primary-color);
+    margin: 0 auto;
+    position: relative;
+    z-index: -1;
+}
+
+.watch-band-top {
+    border-radius: 12px 12px 0 0;
+    transform: translateY(-5px);
+}
+
+.watch-band-bottom {
+    border-radius: 0 0 12px 12px;
+    transform: translateY(5px);
+}
+
+.watch-app-logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.watch-app-text {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* JavaScript to load the real image if available */
+.watch-mockup.hidden {
+    display: none;
 }
 
 @media (max-width: 768px) {
-    .watch-app-section {
-        padding: 4rem 1.5rem;
+    .watch-mockup {
+        width: 200px;
+        height: 300px;
     }
     
-    .watch-app-content h2 {
-        font-size: 2rem;
-        text-align: center;
-    }
-    
-    .watch-app-tagline {
-        font-size: 1.2rem;
-        text-align: center;
-    }
-    
-    .watch-feature p {
-        font-size: 1rem;
-    }
-    
-    .coming-soon,
-    .launch-note {
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .watch-app-features {
-        grid-template-columns: 1fr;
-    }
-    
-    .watch-app-content h2 {
-        font-size: 1.8rem;
-    }
-    
-    .watch-app-image img {
-        max-width: 100%;
+    .watch-frame {
+        width: 150px;
+        height: 180px;
     }
 }
 
@@ -1224,4 +1251,66 @@ body.dark-mode .launch-note {
 .watch-app-image:hover img {
     transform: perspective(1000px) rotateY(0deg) rotate(0deg);
     animation-play-state: paused;
+}
+
+/* Dark mode for Watch App section */
+body.dark-mode .watch-app-section {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05) 0%, rgba(156, 39, 176, 0.05) 100%);
+}
+
+body.dark-mode .watch-app-tagline,
+body.dark-mode .watch-feature p,
+body.dark-mode .launch-note {
+    color: #ccc;
+}
+
+/* Responsive styles for Watch App section */
+@media (max-width: 992px) {
+    .watch-app-container {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+    
+    .watch-app-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .watch-app-tagline {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .watch-app-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .watch-app-content h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .watch-app-tagline {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .watch-feature p {
+        font-size: 1rem;
+    }
+    
+    .coming-soon,
+    .launch-note {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .watch-app-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .watch-app-content h2 {
+        font-size: 1.8rem;
+    }
 }
