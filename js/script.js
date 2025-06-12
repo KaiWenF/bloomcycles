@@ -324,21 +324,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Handle Watch App image loading
-    const watchImage = document.querySelector('.real-watch-image');
-    const watchMockup = document.querySelector('.watch-mockup');
-    const watchContainer = document.querySelector('.watch-image-container');
-    
-    if (watchImage) {
-        // If image fails to load, show the mockup as fallback
-        watchImage.onerror = function() {
-            console.log('Watch app image failed to load, showing mockup instead');
-            watchImage.style.display = 'none';
-            if (watchMockup) {
-                watchMockup.classList.add('fallback-visible');
-            }
-        };
+    // Enhanced Watch App image handling
+    function handleWatchImage() {
+        const watchImage = document.querySelector('.real-watch-image');
+        const watchMockup = document.querySelector('.watch-mockup');
+        
+        if (!watchImage) {
+            console.error('Watch image element not found');
+            return;
+        }
+        
+        console.log('Setting up watch image with src:', watchImage.src);
+        
+        // Force image reload
+        const originalSrc = watchImage.src;
+        watchImage.src = '';
+        setTimeout(() => {
+            watchImage.src = originalSrc + '?t=' + new Date().getTime();
+            console.log('Reloaded image with src:', watchImage.src);
+        }, 100);
+        
+        // Make absolutely sure the image is visible
+        watchImage.style.display = 'block';
+        watchImage.style.opacity = '1';
+        
+        // Hide mockup
+        if (watchMockup) {
+            watchMockup.style.display = 'none';
+        }
     }
+    
+    // Run immediately and also after a delay to ensure image loading
+    handleWatchImage();
+    setTimeout(handleWatchImage, 1000);
     
     // Create mobile category navigation for features section
     createMobileCategoryNav();

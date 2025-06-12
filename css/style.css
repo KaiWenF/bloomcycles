@@ -1100,25 +1100,26 @@ body.dark-mode .category-nav-item {
 }
 
 .watch-image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 5;
+    min-height: 320px;
 }
 
 .real-watch-image {
     max-width: 280px;
-    width: auto;
+    width: 280px;
     height: auto;
+    display: block !important;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
     opacity: 1;
     transform: rotate(6deg);
+    z-index: 100;
 }
 
 .watch-mockup {
