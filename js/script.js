@@ -327,19 +327,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle Watch App image loading
     const watchImage = document.querySelector('.real-watch-image');
     const watchMockup = document.querySelector('.watch-mockup');
+    const watchContainer = document.querySelector('.watch-image-container');
     
     if (watchImage && watchMockup) {
         // Check if image exists and loads properly
         watchImage.onload = function() {
+            // Add loaded class to show the image
             watchImage.classList.add('loaded');
+            
+            // Hide the mockup
             watchMockup.classList.add('hidden');
         };
         
         // If image fails to load, keep showing the mockup
         watchImage.onerror = function() {
             console.log('Watch app image failed to load, showing mockup instead');
-            watchImage.style.display = 'none';
-            watchMockup.style.display = 'block';
+            if (watchContainer) {
+                watchContainer.style.display = 'none';
+            }
         };
     }
     
