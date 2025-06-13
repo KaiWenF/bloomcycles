@@ -7,12 +7,12 @@
     <meta name="description" content="Comprehensive reproductive health tracking app for menstrual cycles, pregnancy, menopause, and fertility with AI-powered insights.">
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0MHJ3YKFZ5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-0MHJ3YKFZ5');
     </script>
     
     <link rel="stylesheet" href="css/style.css">
@@ -27,7 +27,7 @@
                 <a href="#screenshots">Gallery</a>
                 <a href="#watch-app">Watch App</a>
                 <a href="#signup">Join Beta</a>
-                <a href="#survey">Survey</a>
+                <!-- <a href="#survey">Survey</a> -->
             </div>
             <div class="nav-controls">
                 <button onclick="toggleDarkMode()" class="theme-toggle" aria-label="Toggle dark mode">
@@ -46,7 +46,7 @@
                 <a href="#screenshots">App Gallery</a>
                 <a href="#watch-app">Apple Watch App</a>
                 <a href="#signup">Join Beta Program</a>
-                <a href="#survey">Take the Survey</a>
+                <!-- <a href="#survey">Take the Survey</a> -->
             </div>
         </div>
         
@@ -490,26 +490,125 @@
     <section id="signup" class="signup-section">
         <h2>Join the Beta Test</h2>
         <p>Be among the first to experience the future of reproductive health tracking</p>
-        <form action="https://formspree.io/f/mnqeqkzj" method="POST" class="signup-form" id="betaSignupForm">
+        <form action="https://formspree.io/f/movwdylp" method="POST" class="signup-form" id="betaSignupForm">
+            <!-- Personal Information -->
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your name" required>
+                <div class="form-error" id="nameError"></div>
+            </div>
+            
             <div class="form-group">
                 <input type="email" name="email" placeholder="Your email" required>
                 <div class="form-error" id="emailError"></div>
             </div>
+
+            <!-- Device Information -->
+            <div class="form-group">
+                <select name="device" required>
+                    <option value="">Select your primary device</option>
+                    <option value="iphone">iPhone</option>
+                    <option value="ipad">iPad</option>
+                    <option value="both">Both iPhone and iPad</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select name="ios_version" required>
+                    <option value="">Select your iOS version</option>
+                    <option value="ios17">iOS 17</option>
+                    <option value="ios16">iOS 16</option>
+                    <option value="ios15">iOS 15</option>
+                </select>
+            </div>
+
+            <!-- Beta Testing Experience -->
+            <div class="form-group">
+                <select name="testing_experience" required>
+                    <option value="">Have you beta tested apps before?</option>
+                    <option value="yes">Yes, I'm an experienced beta tester</option>
+                    <option value="some">Yes, a few times</option>
+                    <option value="no">No, this is my first time</option>
+                </select>
+            </div>
+
+            <!-- Testing Commitment -->
+            <div class="form-group checkbox-group">
+                <p>I commit to:</p>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="commitments" value="feedback" required>
+                    <span class="checkmark"></span>
+                    <span class="consent-text">Provide regular feedback</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="commitments" value="bugs" required>
+                    <span class="checkmark"></span>
+                    <span class="consent-text">Report bugs and issues</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="commitments" value="updates" required>
+                    <span class="checkmark"></span>
+                    <span class="consent-text">Test new updates promptly</span>
+                </label>
+            </div>
+
+            <!-- Testing Frequency -->
+            <div class="form-group">
+                <select name="testing_frequency" required>
+                    <option value="">How often can you test the app?</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">2-3 times per week</option>
+                    <option value="monthly">Once a week</option>
+                </select>
+            </div>
+
+            <!-- Areas of Interest -->
+            <div class="form-group checkbox-group">
+                <p>Which areas would you like to focus on? (Select all that apply)</p>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="testing_areas" value="ui">
+                    <span class="checkmark"></span>
+                    <span class="consent-text">User Interface & Design</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="testing_areas" value="features">
+                    <span class="checkmark"></span>
+                    <span class="consent-text">Core Features</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="testing_areas" value="performance">
+                    <span class="checkmark"></span>
+                    <span class="consent-text">Performance & Stability</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="testing_areas" value="accessibility">
+                    <span class="checkmark"></span>
+                    <span class="consent-text">Accessibility</span>
+                </label>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="form-group">
+                <textarea name="additional_info" placeholder="Tell us about yourself and why you'd like to be a beta tester (Optional)" rows="3"></textarea>
+            </div>
+
+            <!-- GDPR Consent -->
             <div class="form-group gdpr-container">
                 <label class="checkbox-container">
                     <input type="checkbox" required>
                     <span class="checkmark"></span>
-                    <span class="consent-text">I agree to receive updates about Bloom Cycles (GDPR compliant)</span>
+                    <span class="consent-text">I agree to receive beta testing communications and updates about Bloom Cycles (GDPR compliant)</span>
                 </label>
             </div>
+
             <button type="submit" id="submitButton">
-                <span class="button-text">Join Beta</span>
+                <span class="button-text">Apply for Beta Testing</span>
                 <span class="loading-spinner"></span>
             </button>
             <div class="form-message" id="formMessage"></div>
         </form>
     </section>
 
+    <!-- Survey section temporarily commented out
     <section id="survey" class="survey-section">
         <h2>Help Shape Bloom Cycles</h2>
         <p>Your feedback is crucial in making Bloom Cycles the best reproductive health app</p>
@@ -524,6 +623,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <footer>
         <div class="footer-content">
@@ -542,5 +642,7 @@
             <p>&copy; 2025 Bloom Cycles by Kai Wen. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>

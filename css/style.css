@@ -561,17 +561,46 @@ body.dark-mode .mobile-menu-links a:hover {
 }
 
 .signup-form {
-    max-width: 500px;
+    max-width: 600px;
     margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
 }
 
-.signup-form input {
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 1rem;
-    margin-bottom: 1rem;
     border: none;
     border-radius: 30px;
     font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.checkbox-group {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group p {
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 500;
 }
 
 .signup-form button {
@@ -657,8 +686,38 @@ body.dark-mode {
     color: var(--text-dark);
 }
 
-body.dark-mode .feature-card {
+/* Dark mode for hero section */
+body.dark-mode .hero {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.7) 0%, rgba(156, 39, 176, 0.7) 100%);
+}
+
+/* Dark mode for features section */
+body.dark-mode .features-section {
+    background: #1a1a1a;
+}
+
+body.dark-mode .section-intro {
+    color: #ccc;
+}
+
+body.dark-mode .feature-card,
+body.dark-mode .highlight {
     background: #2a2a2a;
+}
+
+body.dark-mode .feature-card p,
+body.dark-mode .feature-list li,
+body.dark-mode .highlight li {
+    color: #ccc;
+}
+
+body.dark-mode .feature-card h4 {
+    color: var(--primary-color);
+}
+
+/* Dark mode for screenshots section */
+body.dark-mode .screenshots-section {
+    background: #1a1a1a;
 }
 
 body.dark-mode .screenshot-container {
@@ -667,6 +726,11 @@ body.dark-mode .screenshot-container {
 
 body.dark-mode .screenshot-caption {
     background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dark mode for comparison section */
+body.dark-mode .comparison-section {
+    background: #1a1a1a;
 }
 
 body.dark-mode .comparison-table-wrapper,
@@ -680,6 +744,68 @@ body.dark-mode .comparison-table td {
 
 body.dark-mode .feature-no {
     color: #7f8c8d;
+}
+
+/* Dark mode for signup section */
+body.dark-mode .signup-section {
+    background: linear-gradient(135deg, rgba(255, 154, 158, 0.5) 0%, rgba(250, 208, 196, 0.5) 100%);
+}
+
+body.dark-mode .signup-form {
+    background: rgba(42, 42, 42, 0.6);
+}
+
+body.dark-mode .form-group input[type="text"],
+body.dark-mode .form-group input[type="email"],
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.dark-mode .checkbox-group {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .signup-form button {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Dark mode for survey section */
+body.dark-mode .survey-section {
+    background: #1a1a1a;
+}
+
+body.dark-mode .survey-card {
+    background: #2a2a2a;
+    color: var(--text-dark);
+}
+
+body.dark-mode .survey-button {
+    background: var(--secondary-color);
+}
+
+/* Dark mode for watch app section */
+body.dark-mode .watch-app-section {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05) 0%, rgba(156, 39, 176, 0.05) 100%);
+}
+
+body.dark-mode .watch-app-tagline,
+body.dark-mode .watch-feature p,
+body.dark-mode .launch-note {
+    color: #ccc;
+}
+
+/* Dark mode for category navigation */
+body.dark-mode .category-nav {
+    background: rgba(42, 42, 42, 0.9);
+}
+
+body.dark-mode .category-nav-item {
+    background: #2a2a2a;
+    border-color: #444;
+    color: var(--text-dark);
 }
 
 /* Responsive Design */
@@ -932,36 +1058,6 @@ button.loading .loading-spinner {
 
 .survey-button:hover .arrow {
     transform: translateX(5px);
-}
-
-/* Dark mode adjustments for new sections */
-body.dark-mode .survey-card {
-    background: #2a2a2a;
-    color: var(--text-dark);
-}
-
-body.dark-mode .survey-button {
-    background: var(--secondary-color);
-}
-
-/* Dark mode adjustments */
-body.dark-mode .features-section {
-    background: #1a1a1a;
-}
-
-body.dark-mode .feature-card,
-body.dark-mode .highlight {
-    background: #2a2a2a;
-}
-
-body.dark-mode .feature-card p,
-body.dark-mode .feature-list li,
-body.dark-mode .highlight li {
-    color: #ccc;
-}
-
-body.dark-mode .section-intro {
-    color: #ccc;
 }
 
 /* Feature Animations and Mobile Navigation */
@@ -1327,17 +1423,6 @@ body.dark-mode .category-nav-item {
     animation-play-state: paused;
 }
 
-/* Dark mode for Watch App section */
-body.dark-mode .watch-app-section {
-    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05) 0%, rgba(156, 39, 176, 0.05) 100%);
-}
-
-body.dark-mode .watch-app-tagline,
-body.dark-mode .watch-feature p,
-body.dark-mode .launch-note {
-    color: #ccc;
-}
-
 /* Responsive styles for Watch App section */
 @media (max-width: 992px) {
     .watch-app-container {
@@ -1425,5 +1510,35 @@ body.dark-mode .launch-note {
     
     .checkbox-container {
         font-size: 0.8rem;
+    }
+}
+
+/* Responsive Design for Beta Form */
+@media (max-width: 768px) {
+    .signup-form {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .checkbox-group {
+        padding: 1rem;
+    }
+
+    .checkbox-container {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-form {
+        padding: 1rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 0.8rem;
     }
 }

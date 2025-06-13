@@ -117,7 +117,8 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-// Survey link tracking
+// Survey link tracking - temporarily commented out
+/*
 document.querySelector('.survey-button').addEventListener('click', function() {
     if (typeof gtag !== 'undefined') {
         gtag('event', 'survey_click', {
@@ -126,6 +127,7 @@ document.querySelector('.survey-button').addEventListener('click', function() {
         });
     }
 });
+*/
 
 // Check user's preferred theme
 document.addEventListener('DOMContentLoaded', function() {
@@ -311,7 +313,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Track survey button clicks
+    // Track survey button clicks - temporarily commented out
+    /*
     const surveyButton = document.querySelector('.survey-button');
     if (surveyButton) {
         surveyButton.addEventListener('click', function() {
@@ -323,6 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    */
     
     // Enhanced Watch App image handling
     function handleWatchImage() {
@@ -421,6 +425,116 @@ function createMobileCategoryNav() {
 
 // Email validation function
 function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function validateForm(form) {
+    let isValid = true;
+    const name = form.querySelector('input[name="name"]');
+    const email = form.querySelector('input[name="email"]');
+    const device = form.querySelector('select[name="device"]');
+    const iosVersion = form.querySelector('select[name="ios_version"]');
+    const testingExperience = form.querySelector('select[name="testing_experience"]');
+    const testingFrequency = form.querySelector('select[name="testing_frequency"]');
+    const commitments = form.querySelectorAll('input[name="commitments"]');
+    const testingAreas = form.querySelectorAll('input[name="testing_areas"]');
+    const gdprConsent = form.querySelector('.gdpr-container input[type="checkbox"]');
+
+    // Reset previous errors
+    form.querySelectorAll('.form-error').forEach(error => error.textContent = '');
+
+    // Validate name
+    if (!name.value.trim()) {
+        document.getElementById('nameError').textContent = 'Please enter your name';
+        isValid = false;
+    }
+
+    // Validate email
+    if (!email.value.trim()) {
+        document.getElementById('emailError').textContent = 'Please enter your email';
+        isValid = false;
+    } else if (!isValidEmail(email.value)) {
+        document.getElementById('emailError').textContent = 'Please enter a valid email address';
+        isValid = false;
+    }
+
+    // Validate device selection
+    if (!device.value) {
+        device.classList.add('error');
+        isValid = false;
+    } else {
+        device.classList.remove('error');
+    }
+
+    // Validate iOS version
+    if (!iosVersion.value) {
+        iosVersion.classList.add('error');
+        isValid = false;
+    } else {
+        iosVersion.classList.remove('error');
+    }
+
+    // Validate testing experience
+    if (!testingExperience.value) {
+        testingExperience.classList.add('error');
+        isValid = false;
+    } else {
+        testingExperience.classList.remove('error');
+    }
+
+    // Validate testing frequency
+    if (!testingFrequency.value) {
+        testingFrequency.classList.add('error');
+        isValid = false;
+    } else {
+        testingFrequency.classList.remove('error');
+    }
+
+    // Validate commitments (at least one must be checked)
+    let hasCommitment = false;
+    commitments.forEach(commitment => {
+        if (commitment.checked) hasCommitment = true;
+    });
+    if (!hasCommitment) {
+        commitments.forEach(commitment => {
+            commitment.parentElement.classList.add('error');
+        });
+        isValid = false;
+    } else {
+        commitments.forEach(commitment => {
+            commitment.parentElement.classList.remove('error');
+        });
+    }
+
+    // Validate testing areas (at least one must be checked)
+    let hasTestingArea = false;
+    testingAreas.forEach(area => {
+        if (area.checked) hasTestingArea = true;
+    });
+    if (!hasTestingArea) {
+        testingAreas.forEach(area => {
+            area.parentElement.classList.add('error');
+        });
+        isValid = false;
+    } else {
+        testingAreas.forEach(area => {
+            area.parentElement.classList.remove('error');
+        });
+    }
+
+    // Validate GDPR consent
+    if (!gdprConsent.checked) {
+        gdprConsent.parentElement.classList.add('error');
+        isValid = false;
+    } else {
+        gdprConsent.parentElement.classList.remove('error');
+    }
+
+    return isValid;
+}
+
+function isValidEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
