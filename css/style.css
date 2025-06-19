@@ -694,7 +694,7 @@ footer {
 /* Dark Mode */
 body.dark-mode {
     background: var(--background-dark);
-    color: var(--text-dark);
+    color: var(--text-body-dark);
 }
 
 /* Dark mode for hero section */
