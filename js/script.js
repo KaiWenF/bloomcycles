@@ -173,7 +173,7 @@ if (pressKitButton) {
     });
 }
 
-const pressContactButton = document.querySelector('a[href^="mailto:press@"]');
+const pressContactButton = document.querySelector('a[href^="mailto:kaiwen@"]');
 if (pressContactButton) {
     pressContactButton.addEventListener('click', function() {
         if (typeof gtag !== 'undefined') {
