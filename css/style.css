@@ -617,7 +617,14 @@ body.dark-mode .mobile-menu-links a:hover {
 }
 
 .signup-form button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.signup-form button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
 }
 
 /* Footer */
@@ -972,19 +979,93 @@ body.dark-mode .category-nav-item {
 
 .form-message {
     margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
+    padding: 1.5rem;
+    border-radius: 10px;
     display: none;
+    animation: fadeInUp 0.5s ease;
 }
 
 .form-message.success {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
+    border: 2px solid rgba(76, 175, 80, 0.3);
+    color: #2e7d32;
 }
 
 .form-message.error {
-    background: rgba(255, 68, 68, 0.2);
-    color: white;
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(244, 67, 54, 0.05));
+    border: 2px solid rgba(244, 67, 54, 0.3);
+    color: #c62828;
+}
+
+/* Enhanced success and error message components */
+.success-message,
+.error-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.success-icon,
+.error-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.success-content,
+.error-content {
+    flex: 1;
+}
+
+.success-content h4,
+.error-content h4 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.success-content p,
+.error-content p {
+    margin: 0 0 0.75rem 0;
+    line-height: 1.6;
+}
+
+.success-content ul {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+}
+
+.success-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.success-note,
+.error-note {
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 1rem !important;
+    padding: 0.75rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark mode support for form messages */
+body.dark-mode .form-message.success {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(76, 175, 80, 0.08));
+    border-color: rgba(76, 175, 80, 0.4);
+    color: #81c784;
+}
+
+body.dark-mode .form-message.error {
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.15), rgba(244, 67, 54, 0.08));
+    border-color: rgba(244, 67, 54, 0.4);
+    color: #e57373;
+}
+
+body.dark-mode .success-note,
+body.dark-mode .error-note {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .loading-spinner {
@@ -1579,4 +1660,55 @@ body.dark-mode .goog-te-gadget .goog-te-combo {
 body.dark-mode .goog-te-gadget .goog-te-combo:hover {
     background: var(--primary-color);
     color: white;
+}
+
+/* Media queries for form messages */
+@media (max-width: 768px) {
+    .success-message,
+    .error-message {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+    
+    .success-icon,
+    .error-icon {
+        font-size: 1.75rem;
+        margin-top: 0;
+    }
+    
+    .success-content h4,
+    .error-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .success-content ul {
+        text-align: left;
+        padding-left: 1rem;
+    }
+    
+    .form-message {
+        padding: 1.25rem;
+        margin-top: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-message {
+        padding: 1rem;
+    }
+    
+    .success-content h4,
+    .error-content h4 {
+        font-size: 1rem;
+    }
+    
+    .success-content p,
+    .error-content p {
+        font-size: 0.9rem;
+    }
+    
+    .success-content li {
+        font-size: 0.9rem;
+    }
 }

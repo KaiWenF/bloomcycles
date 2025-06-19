@@ -86,9 +86,31 @@ form.addEventListener('submit', async (e) => {
         const result = await response.json();
         
         if (response.ok) {
-            formMessage.textContent = 'Thank you for joining! We\'ll be in touch soon.';
+            // Enhanced success message with more details
+            formMessage.innerHTML = `
+                <div class="success-message">
+                    <div class="success-icon">✅</div>
+                    <div class="success-content">
+                        <h4>Welcome to the Bloom Cycles Beta!</h4>
+                        <p>Thank you for joining our beta testing program. Here's what happens next:</p>
+                        <ul>
+                            <li>You'll receive a confirmation email within 24 hours</li>
+                            <li>We'll review your application and get back to you within 1-2 weeks</li>
+                            <li>If selected, you'll get early access to Bloom Cycles before public release</li>
+                            <li>You'll receive exclusive updates and be part of shaping the future of reproductive health tracking</li>
+                        </ul>
+                        <p class="success-note">Keep an eye on your inbox for updates!</p>
+                    </div>
+                </div>
+            `;
             formMessage.className = 'form-message success';
             form.reset();
+            
+            // Brief delay to show loading state, then display success message
+            setTimeout(() => {
+                formMessage.style.display = 'block';
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
             
             // Track successful submission
             if (typeof gtag !== 'undefined') {
@@ -101,14 +123,23 @@ form.addEventListener('submit', async (e) => {
             throw new Error(result.error || 'Something went wrong');
         }
     } catch (error) {
-        formMessage.textContent = 'Sorry, there was an error. Please try again.';
-        formMessage.className = 'form-message error';
+        formMessage.innerHTML = `
+            <div class="error-message">
+                <div class="error-icon">❌</div>
+                <div class="error-content">
+                    <h4>Oops! Something went wrong</h4>
+                    <p>We couldn't process your application right now. Please try again in a few moments.</p>
+                    <p class="error-note">If the problem persists, please contact us directly.</p>
+                </div>
+            </div>
+        `;
+        formMessage.classList.add('error');
         
         // Track error
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'beta_signup_error', {
-                'event_category': 'engagement',
-                'event_label': error.message
+        if (typeof gtag === 'function') {
+            gtag('event', 'sign_up_error', {
+                'event_category': 'error',
+                'event_label': 'beta_signup_error'
             });
         }
     } finally {
@@ -272,9 +303,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 formMessage.style.display = 'block';
                 if (data.ok) {
+                    // Enhanced success message with more details
+                    formMessage.innerHTML = `
+                        <div class="success-message">
+                            <div class="success-icon">✅</div>
+                            <div class="success-content">
+                                <h4>Welcome to the Bloom Cycles Beta!</h4>
+                                <p>Thank you for joining our beta testing program. Here's what happens next:</p>
+                                <ul>
+                                    <li>You'll receive a confirmation email within 24 hours</li>
+                                    <li>We'll review your application and get back to you within 1-2 weeks</li>
+                                    <li>If selected, you'll get early access to Bloom Cycles before public release</li>
+                                    <li>You'll receive exclusive updates and be part of shaping the future of reproductive health tracking</li>
+                                </ul>
+                                <p class="success-note">Keep an eye on your inbox for updates!</p>
+                            </div>
+                        </div>
+                    `;
                     formMessage.classList.add('success');
-                    formMessage.textContent = 'Thank you for signing up! We\'ll be in touch soon.';
                     form.reset();
+                    
+                    // Brief delay to show loading state, then display success message
+                    setTimeout(() => {
+                        formMessage.style.display = 'block';
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 500);
                     
                     // Track successful submission
                     if (typeof gtag === 'function') {
@@ -284,8 +337,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                     }
                 } else {
+                    formMessage.innerHTML = `
+                        <div class="error-message">
+                            <div class="error-icon">❌</div>
+                            <div class="error-content">
+                                <h4>Oops! Something went wrong</h4>
+                                <p>We couldn't process your application right now. Please try again in a few moments.</p>
+                                <p class="error-note">If the problem persists, please contact us directly.</p>
+                            </div>
+                        </div>
+                    `;
                     formMessage.classList.add('error');
-                    formMessage.textContent = 'There was an error submitting the form. Please try again.';
                     
                     // Track error
                     if (typeof gtag === 'function') {
@@ -299,8 +361,17 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 submitButton.classList.remove('loading');
                 formMessage.style.display = 'block';
+                formMessage.innerHTML = `
+                    <div class="error-message">
+                        <div class="error-icon">❌</div>
+                        <div class="error-content">
+                            <h4>Oops! Something went wrong</h4>
+                            <p>We couldn't process your application right now. Please try again in a few moments.</p>
+                            <p class="error-note">If the problem persists, please contact us directly.</p>
+                        </div>
+                    </div>
+                `;
                 formMessage.classList.add('error');
-                formMessage.textContent = 'There was an error submitting the form. Please try again.';
                 
                 // Track error
                 if (typeof gtag === 'function') {
