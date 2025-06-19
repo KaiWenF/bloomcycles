@@ -6,13 +6,58 @@ Bloom Cycles is a comprehensive iOS application designed to help users track and
 ## Localization and Language Support
 
 ### Current Status
-- **Supported Languages:** 29 languages including English, Spanish, French, German, Chinese (Simplified & Traditional), Arabic, Hindi, Bengali, Russian, Japanese, Korean, Turkish, Vietnamese, Italian, Indonesian, Thai, Polish, Dutch, Filipino, Kreyòl Ayisyen, Hausa, Wolof, Somali, Tigrinya, Swahili, Igbo, Yoruba, Ukrainian, and Finnish
+- **Supported Languages:** The app supports 43 languages:
+  1. English (en) 🇺🇸
+  2. Spanish (es) 🇪🇸
+  3. French (fr) 🇫🇷
+  4. German (de) 🇩🇪
+  5. Chinese Simplified (zh-Hans) 🇨🇳
+  6. Chinese Traditional (zh-Hant) 🇹🇼
+  7. Arabic (ar) 🇸🇦
+  8. Hindi (hi) 🇮🇳
+  9. Haitian Creole (ht) 🇭🇹
+  10. Hausa (ha) 🇳🇬
+  11. Wolof (wo) 🇸🇳
+  12. Igbo (ig) 🇳🇬
+  13. Yoruba (yo) 🇳🇬
+  14. Vietnamese (vi) 🇻🇳
+  15. Ukrainian (uk) 🇺🇦
+  16. Turkish (tr) 🇹🇷
+  17. Thai (th) 🇹🇭
+  18. Swedish (sv) 🇸🇪
+  19. Russian (ru) 🇷🇺
+  20. Portuguese (pt) 🇵🇹
+  21. Polish (pl) 🇵🇱
+  22. Norwegian (nb) 🇳🇴
+  23. Indonesian (id) 🇮🇩
+  24. Italian (it) 🇮🇹
+  25. Danish (da) 🇩🇰
+  26. Finnish (fi) 🇫🇮
+  27. Somali (so) 🇸🇴
+  28. Tigrinya (ti) 🇪🇷
+  29. Swahili (sw) 🇹🇿
+  30. Amharic (am) 🇪🇹
+  31. Oromo (om) 🇪🇹
+  32. Zulu (zu) 🇿🇦
+  33. Berber (ber) 🇲🇦
+  34. Nubian (nub) 🇸🇩
+  35. Bengali (bn) 🇧🇩
+  36. Tamil (ta) 🇮🇳
+  37. Malay (ms) 🇲🇾
+  38. Tagalog/Filipino (fil) 🇵🇭
+  39. Japanese (ja) 🇯🇵
+  40. Korean (ko) 🇰🇷
+  41. Dutch (nl) 🇳🇱
+  42. Danish (Denmark) (da-DK) 🇩🇰
+  43. Finnish (Finland) (fi-FI) 🇫🇮
+
 - **Runtime Language Switching:** Immediate UI updates without app restart
 - **Right-to-Left Support:** Proper display for languages like Arabic
 - **Encoding:** Fixed issues with non-Latin character sets
 
 ### Implementation
-- **Localization Framework:** Using Localize-Swift for runtime language switching
+- **Localization Framework:** Using a combination of native iOS localization and custom language management
+- **Language Detection:** Automatic detection of device language on first launch
 - **Fallback System:** Legacy localization logic for missing translations
 - **UI Updates:** Immediate refresh of all views on language change
 - **Accessibility:** Full VoiceOver support in all supported languages
@@ -25,6 +70,9 @@ Bloom Cycles is a comprehensive iOS application designed to help users track and
 - Improved language selection UI with immediate feedback
 - Added aggressive refresh logic for language changes
 - Fixed language switching issues in LanguageSettingsView
+- Enhanced language management system with ModernLanguageManager
+- Added support for 43 languages with proper localization bundles
+- Fixed crash on first launch related to language detection
 
 ## Recent Updates (March 2525)
 
@@ -658,4 +706,47 @@ Bloom Cycles is a comprehensive iOS application designed to help users track and
 
 ## June 2025 UI Update
 
-- The Data Export section (Export HealthKit Data, format picker, Data Analytics) in the HealthKit Integration screen has been hidden from the user interface to simplify the app. The code is preserved and can be restored if these features are needed in the future. 
+- The Data Export section (Export HealthKit Data, format picker, Data Analytics) in the HealthKit Integration screen has been hidden from the user interface to simplify the app. The code is preserved and can be restored if these features are needed in the future.
+
+# Recent Updates (July 2025)
+
+### iPad UI Improvements
+- **Enhanced iPad Navigation Structure:**
+  - Fixed UserProfileSetupView display issues on iPad devices where the screen was incorrectly showing in a sidebar/split view
+  - Restructured navigation hierarchy to ensure consistent full-screen presentation across all device types
+  - Removed nested NavigationView structures causing display inconsistencies
+  - Implemented consistent StackNavigationViewStyle for profile setup screens
+  - Modified key views to properly handle iPad navigation:
+    - WalkthroughContainerView: Removed redundant NavigationView wrapping
+    - SettingsView: Added proper NavigationView with StackNavigationViewStyle
+    - QuickAccessView: Enhanced navigation destination handling
+  - Improved parent-child view relationships for proper iPad layout
+  - Ensured consistent user experience between iPhone and iPad devices
+
+### Widget Implementation
+- **Comprehensive Widget Integration:**
+  - Implemented two widget types: Cycle Tracking Widget and Health Summary Widget
+  - Created a robust WidgetDataProvider for efficient Core Data access from widgets
+  - Implemented intelligent WidgetTimelineProvider with adaptive refresh scheduling
+  - Added background refresh tasks for timely widget updates
+  - Implemented proper caching mechanisms for performance optimization
+  - Added graceful error handling with fallback displays
+  - Implemented full localization support using the app's existing string extension
+- **Cycle Tracking Widget:**
+  - Displays current cycle day, phase, and predictions
+  - Shows temperature data and key symptoms
+  - Supports both small and medium widget sizes
+  - Provides quick glance information with color-coded phase indicators
+  - Updates automatically with cycle progression
+- **Health Summary Widget:**
+  - Displays upcoming health events and reminders
+  - Shows recent symptom trends and health metrics
+  - Supports small and medium widget configurations
+  - Provides actionable health insights at a glance
+- **App Integration:**
+  - Added WidgetIntegrationManager for coordinating widget updates
+  - Implemented shared UserDefaults through app groups for data communication
+  - Added privacy controls with option to blur sensitive data when device is locked
+  - Created WidgetSettingsView for user configuration options
+  - Added widget troubleshooting tools in settings
+  - Integrated widget refresh triggers with app data changes 

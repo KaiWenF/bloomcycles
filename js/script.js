@@ -160,6 +160,49 @@ document.querySelector('.survey-button').addEventListener('click', function() {
 });
 */
 
+// Track press kit downloads and press interactions
+const pressKitButton = document.querySelector('a[href="Bloom Cycles Press Kit.pdf"]');
+if (pressKitButton) {
+    pressKitButton.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'press_kit_download', {
+                'event_category': 'engagement',
+                'event_label': 'press_kit_pdf'
+            });
+        }
+    });
+}
+
+const pressContactButton = document.querySelector('a[href^="mailto:press@"]');
+if (pressContactButton) {
+    pressContactButton.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'press_contact_click', {
+                'event_category': 'engagement',
+                'event_label': 'press_email'
+            });
+        }
+    });
+}
+
+// Track press section visibility
+const pressSection = document.querySelector('.press-section');
+if (pressSection) {
+    const pressObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'press_section_view', {
+                    'event_category': 'engagement',
+                    'event_label': 'press_section'
+                });
+            }
+            pressObserver.unobserve(pressSection);
+        }
+    }, { threshold: 0.3 });
+    
+    pressObserver.observe(pressSection);
+}
+
 // Check user's preferred theme
 document.addEventListener('DOMContentLoaded', function() {
     // Apply saved theme preference

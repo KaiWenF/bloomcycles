@@ -1712,3 +1712,303 @@ body.dark-mode .goog-te-gadget .goog-te-combo:hover {
         font-size: 0.9rem;
     }
 }
+
+/* Press Section */
+.press-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    text-align: center;
+}
+
+.press-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.press-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.press-intro {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.press-resources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.press-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.press-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #ff6b9d);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.press-card:hover::before {
+    transform: scaleX(1);
+}
+
+.press-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.press-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.press-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.press-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.press-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.press-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.press-button.secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.press-button.secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.download-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.press-button:hover .download-icon {
+    transform: translateY(2px);
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.press-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+.file-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+.press-highlights {
+    margin-top: 4rem;
+}
+
+.press-highlights h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.highlight-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.highlight-item:hover {
+    transform: translateY(-3px);
+}
+
+.highlight-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.highlight-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.highlight-item p {
+    color: var(--text-light);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Dark mode support for press section */
+body.dark-mode .press-section {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+body.dark-mode .press-card {
+    background: #333;
+    color: var(--text-dark);
+}
+
+body.dark-mode .press-card h3 {
+    color: var(--text-dark);
+}
+
+body.dark-mode .press-card p {
+    color: #ccc;
+}
+
+body.dark-mode .highlight-item {
+    background: #333;
+}
+
+body.dark-mode .highlight-item h4 {
+    color: var(--text-dark);
+}
+
+body.dark-mode .highlight-item p {
+    color: #ccc;
+}
+
+body.dark-mode .file-info {
+    color: #999;
+}
+
+/* Responsive design for press section */
+@media (max-width: 768px) {
+    .press-section {
+        padding: 3rem 1rem;
+    }
+    
+    .press-section h2 {
+        font-size: 2rem;
+    }
+    
+    .press-intro {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .press-resources {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .press-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .press-icon {
+        font-size: 2.5rem;
+    }
+    
+    .press-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .highlight-item {
+        padding: 1.5rem;
+    }
+    
+    .press-highlights h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .press-section h2 {
+        font-size: 1.75rem;
+    }
+    
+    .press-intro {
+        font-size: 1rem;
+    }
+    
+    .press-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .press-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .highlight-item {
+        padding: 1.25rem;
+    }
+    
+    .highlight-icon {
+        font-size: 2rem;
+    }
+    
+    .highlight-item h4 {
+        font-size: 1.1rem;
+    }
+}
