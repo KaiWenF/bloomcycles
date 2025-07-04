@@ -1,0 +1,129 @@
+/*
+Theme Name: BloomCycles
+Theme URI: https://bloomcycles.com
+Author: Kai Wen
+Author URI: https://bloomcycles.com
+Description: A custom WordPress theme for BloomCycles reproductive health tracking app
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bloomcycles
+Tags: custom-colors, custom-menu, featured-images, translation-ready, dark-mode
+
+This theme is designed specifically for BloomCycles app website.
+*/
+
+/* Import existing styles */
+@import url('../../../css/style.css');
+
+/* WordPress Core Styles */
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1.5em;
+}
+
+.wp-caption {
+    max-width: 100%;
+    margin-bottom: 1.5em;
+}
+
+/* Theme Specific Styles */
+.hero-section {
+    position: relative;
+    background: var(--background-color);
+}
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--background-color);
+}
+
+/* WordPress Menu Styles */
+.nav-links .menu-item {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.nav-links .current-menu-item a {
+    color: var(--primary-color);
+}
+
+/* WordPress Content Styles */
+.entry-content {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.entry-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Comments Styles */
+.comments-area {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Forms */
+.wp-block-form {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+/* Dark Mode Support */
+body.dark-mode {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --heading-color: #f0f0f0;
+    --border-color: #333333;
+}
+
+/* Admin Bar Adjustments */
+.admin-bar .main-nav {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar .main-nav {
+        top: 46px;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .entry-content {
+        padding: 0 1rem;
+    }
+    
+    .nav-links .menu-item {
+        margin: 0 0.5rem;
+    }
+} 
