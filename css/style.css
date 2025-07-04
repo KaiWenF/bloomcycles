@@ -2016,3 +2016,114 @@ body.dark-mode .file-info {
         font-size: 1.1rem;
     }
 }
+
+/* Legal Pages Styles */
+.legal-content {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.legal-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.last-updated {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.policy-section {
+    margin-bottom: 2.5rem;
+}
+
+.policy-section h2 {
+    font-size: 1.8rem;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.policy-section h3 {
+    font-size: 1.4rem;
+    color: var(--heading-color);
+    margin: 1.5rem 0 1rem;
+}
+
+.policy-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.policy-section ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.policy-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.policy-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.policy-section a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Dark Mode Adjustments for Legal Pages */
+@media (prefers-color-scheme: dark) {
+    .legal-content h1 {
+        color: var(--primary-light);
+    }
+
+    .policy-section h2,
+    .policy-section h3 {
+        color: var(--heading-light);
+    }
+
+    .policy-section p,
+    .policy-section li {
+        color: var(--text-light);
+    }
+
+    .policy-section a {
+        color: var(--primary-light);
+    }
+
+    .policy-section a:hover {
+        color: var(--primary-lighter);
+    }
+}
+
+/* Responsive Adjustments for Legal Pages */
+@media (max-width: 768px) {
+    .legal-content {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+
+    .legal-content h1 {
+        font-size: 2rem;
+    }
+
+    .policy-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .policy-section h3 {
+        font-size: 1.2rem;
+    }
+}
